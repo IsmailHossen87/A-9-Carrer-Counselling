@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const SingleCard = ({card}) => {
+    useEffect(() => {
+        AOS.init({ duration: 1000 });
+      }, []);
+
     const {category,serviceName,pricing,counselorName,id,image} = card
     return (
-        <div className="card bg-base-100  shadow-xl">
+        <div className="card bg-base-100 mx-2 shadow-xl"
+        data-aos="fade-up">
+
       <figure>
         <img 
         className='h-[250px] w-full'

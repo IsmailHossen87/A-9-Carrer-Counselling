@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className="flex space-x-3 items-center">
         {/* <Link to={"/login"}>login</Link>
         <Link to={"/register"}>Register</Link> */}
-        <Link className='font-bold '>Home</Link>
+        <Link to={'/'} className='font-bold '>Home</Link>
       </div>
       <div className="flex items-center gap-2">
         <div>

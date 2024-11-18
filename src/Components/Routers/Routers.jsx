@@ -5,13 +5,14 @@ import Login from "../Login/Login";
 import Register from "../Login/Register/Register";
 import MainLayout from "../MainLayOut/MainLayout";
 import Details from "../Details/Details";
+import Error from "../Error/Error";
 import PrivateRoute from "../ParivateRoute/PrivateRoute";
 
 const Routers = createBrowserRouter([
-    {
+    { 
         path:'/',
         element: <MainLayout></MainLayout>,
-        
+        errorElement:<Error></Error>
     },
     {
         path:'/login',
@@ -23,7 +24,7 @@ const Routers = createBrowserRouter([
     },
     {
         path: '/details/:id',
-        element: <PrivateRoute><Details></Details></PrivateRoute>,
+        element:<PrivateRoute><Details></Details></PrivateRoute>,
         loader: async () => {
           const response = await fetch('/PublicData.json'); 
           return response.json();

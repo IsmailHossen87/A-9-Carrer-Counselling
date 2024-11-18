@@ -1,6 +1,4 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.image {
-    background-image: url("../src/assets/WhatsApp Image 2024-11-17 at 20.02.00_b0c9abd5.jpg");
-  }
+@import "aos/dist/aos.css"; 

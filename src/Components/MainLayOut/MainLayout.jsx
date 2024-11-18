@@ -3,6 +3,7 @@ import Navbar from '../Navbar/Navbar';
 import Slider from '../Slider/Slider';
 import Card from '../Card/Card';
 import Footer from '../Footer/Footer';
+import Inspirational from '../Inspiarational/Inspoarational';
 
 const MainLayout = () => {
     return (
@@ -12,6 +13,7 @@ const MainLayout = () => {
             <Slider></Slider>
             </div>
             <Card></Card>
+            <Inspirational></Inspirational>
             <Footer></Footer>
         </div>
     );

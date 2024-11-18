@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import Navbar from '../Navbar/Navbar';
 
 const Details = () => {
   const data = useLoaderData();
@@ -18,7 +19,9 @@ const Details = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto my-8  bg-white rounded-lg ">
+   <>
+   <Navbar></Navbar>
+   <div className="max-w-md mx-auto my-8  bg-white rounded-lg ">
       <div className="card card-compact bg-base-100 w-full shadow-xl">
         <figure>
           <img
@@ -67,6 +70,7 @@ const Details = () => {
         </div>
       </div>
     </div>
+   </>
   );
 };
 

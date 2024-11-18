@@ -13,6 +13,7 @@ const auth = getAuth(app)
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loader,setloader] = useState(true)
+    console.log(user)
     //  create a user
     const createUser = (email, Password) => {
       setloader(true)
@@ -30,11 +31,10 @@ const AuthProvider = ({children}) => {
       return setUser(null)
     };
     // updata Profile
-    const updataProfile = (updataData)=>{
+    const updateprofile = (updataData)=>{
       return updateProfile(auth.currentUser,updataData)
   
     }
-    // coad k objerb করার লাগি
     useEffect(() => {
       const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
         if (currentUser) {
@@ -52,7 +52,7 @@ const AuthProvider = ({children}) => {
       user,
       logOut,
       loader,
-      updataProfile
+      updateprofile
     };
     return (
         <AuthContext.Provider value={authInfo}>
