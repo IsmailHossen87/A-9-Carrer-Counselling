@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Navbar from '../Navbar/Navbar';
+import Footer from '../Footer/Footer';
 
 const Service = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+   <>
+   <Navbar></Navbar>
+   <div className="flex justify-center items-center my-5 min-h-screen bg-gray-100">
       <div className="card bg-white shadow-lg p-8 w-full max-w-4xl">
         <h2 className="font-bold text-3xl text-center text-blue-600 mb-4">Career Counseling Services</h2>
         <p className="text-center text-lg text-gray-600 mb-6">Our career counseling services help you navigate your professional journey with personalized guidance. We offer various services to help you achieve your career goals!</p>
@@ -54,10 +58,11 @@ const Service = () => {
 
         <div className="text-center mt-8">
           <p className="text-lg text-gray-700">Ready to start your career journey? Get in touch with our experts today!</p>
-          <Link to={'/contract'}><button className="btn btn-primary mt-4">Contact Us</button></Link>
         </div>
       </div>
     </div>
+   <Footer></Footer>
+   </>
   );
 };
 

@@ -1,11 +1,13 @@
 import React, { useContext, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 
 const Login = () => {
-  const emailRef = useRef(null); // Initialize useRef correctly
-  const { createLogin, forgetPass } = useContext(AuthContext);
+  const emailRef = useRef(null); 
+  const { createLogin, forgetPass,loginGoogle } = useContext(AuthContext);
   const [showpassword, setshowPassword] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -37,8 +39,14 @@ const Login = () => {
     }
   };
 
+  const handleGooglelogin =()=>{
+    loginGoogle()
+    navigate(location?.state || "/");
+  }
   return (
-    <div className="flex justify-center items-center min-h-screen">
+ <>
+ <Navbar></Navbar>
+ <div className="flex justify-center items-center min-h-screen">
       <div className="card bg-base-100 w-full max-w-lg shrink-0 p-4">
         <h2 className="font-bold text-xl text-center py-2">Login Your Account</h2>
         <form onSubmit={handleLogin} className="card-body">
@@ -85,6 +93,7 @@ const Login = () => {
           </div>
           <div className="form-control mt-6 gap-3">
             <button className="btn btn-primary">Login</button>
+            <button onClick={handleGooglelogin} className="btn btn-secondary"><FaGoogle></FaGoogle> Google</button>
           </div>
         </form>
         <p className="font-semibold text-center">
@@ -95,6 +104,8 @@ const Login = () => {
         </p>
       </div>
     </div>
+ <Footer></Footer>
+ </>
   );
 };
 

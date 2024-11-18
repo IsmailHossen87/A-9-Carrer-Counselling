@@ -1,40 +1,36 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { FaCamera } from 'react-icons/fa';
+import Navbar from '../Navbar/Navbar';
+import Footer from '../Footer/Footer';
 
 const Profile = () => {
   const { user, updateprofile, loader } = useContext(AuthContext);
   const [name, setName] = useState('');
   const [image, setImage] = useState('');
   const [newImage, setNewImage] = useState(null);
-  const [isLoading, setIsLoading] = useState(true); // Local loader state for component
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Fetch user data when the component loads or when the user state changes
   useEffect(() => {
     if (user) {
-      // Set the user's current display name and photo URL
       setName(user.displayName || '');
       setImage(user.photoURL || 'https://via.placeholder.com/150');
       setIsLoading(false);
     }
-  }, [user]); // Dependency array ensures this runs when 'user' changes
+  }, [user]); 
 
-  // Handle updating profile information
   const handleUpdateProfile = async (e) => {
     e.preventDefault();
     try {
-      setIsLoading(true); // Show loading indicator
+      setIsLoading(true); 
 
-      let photoURL = image; // Default to the current image
+      let photoURL = image; 
 
-      // If a new image is selected, handle the image upload (to Firebase Storage, for example)
       if (newImage) {
-        // Your image upload logic goes here
-        // Example: photoURL = await uploadImage(newImage);
-        photoURL = URL.createObjectURL(newImage); // Temporary preview URL (Replace this with Firebase Storage URL)
+      
+        photoURL = URL.createObjectURL(newImage); 
       }
 
-      // Update the Firebase Auth profile with the new name and photo URL
       await updateprofile({
         displayName: name,
         photoURL: photoURL,
@@ -61,7 +57,9 @@ const Profile = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
+   <>
+   <Navbar></Navbar>
+   <div className="flex justify-center items-center min-h-screen">
       <div className="card bg-base-100 w-full max-w-lg p-8 shadow-lg">
         <h2 className="font-bold text-2xl text-center">My Profile</h2>
 
@@ -124,6 +122,8 @@ const Profile = () => {
         )}
       </div>
     </div>
+   <Footer></Footer>
+   </>
   );
 };
 

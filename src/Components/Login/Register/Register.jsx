@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
+import Navbar from "../../Navbar/Navbar";
+import Footer from "../../Footer/Footer";
 
 const Regsiter = () => {
   const { loginGoogle,createUser, setUser ,updateprofile} = useContext(AuthContext);
@@ -55,7 +57,9 @@ const handleGoogleRegister = ()=>{
 
  
   return (
-    <div className="flex justify-center  items-center min-h-screen">
+  <>
+  <Navbar></Navbar>
+  <div className="flex justify-center  items-center min-h-screen">
       <div className="card bg-base-100 w-full max-w-lg shrink-0 p-4">
         <form onSubmit={handleRegister} className="card-body">
           <div className="form-control">
@@ -134,6 +138,8 @@ const handleGoogleRegister = ()=>{
         </p>
       </div>
     </div>
+  <Footer></Footer>
+  </>
   );
 };
 
