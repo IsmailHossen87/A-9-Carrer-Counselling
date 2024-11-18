@@ -13,6 +13,8 @@ const Navbar = () => {
         {/* <Link to={"/login"}>login</Link>
         <Link to={"/register"}>Register</Link> */}
         <Link to={'/'} className='font-bold '>Home</Link>
+        <Link to={'/service'} className='font-bold '>Service</Link>
+        <Link to={'/profile'} className='font-bold '>Profile</Link>
       </div>
       <div className="flex items-center gap-2">
         <div>

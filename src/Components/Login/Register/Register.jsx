@@ -1,9 +1,10 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { FaGoogle } from "react-icons/fa";
 
 const Regsiter = () => {
-  const { createUser, setUser ,updateprofile} = useContext(AuthContext);
+  const { loginGoogle,createUser, setUser ,updateprofile} = useContext(AuthContext);
   const [error, setError] = useState({name:'',password:''});
   const navigate = useNavigate()
   const handleRegister = (event) => {
@@ -13,17 +14,16 @@ const Regsiter = () => {
     const password = event.target.password.value;
     const name = event.target.name.value;
     const photo = event.target.photo.value;
-
     let iserror = false;
-    if (password.length < 5) {
+    if ( password.length < 6 ||
+      !/[A-Z]/.test(password) ||
+      !/[a-z]/.test(password)) {
       setError((prev)=>(
         {
-          ...prev, password:'password must be 6 carecter'
+          ...prev, password: "Password must be at least 6 characters, include uppercase and lowercase letters."
         }
-      
       ))
       iserror = true;
-      // return;
     } 
    if (name.length < 5) {
       setError((prev)=>(
@@ -33,7 +33,6 @@ const Regsiter = () => {
         }
       ))
       iserror = true;
-      // return;
     }
     
     if(iserror){
@@ -49,17 +48,20 @@ const Regsiter = () => {
     .catch((error) => {
     });
 }
-   
+const handleGoogleRegister = ()=>{
+  loginGoogle()
+  navigate('/')
+}
 
  
   return (
     <div className="flex justify-center  items-center min-h-screen">
       <div className="card bg-base-100 w-full max-w-lg shrink-0 p-4">
-        <h2 className="font-bold text-xl text-center ">
-          Register Your Account !
-        </h2>
         <form onSubmit={handleRegister} className="card-body">
           <div className="form-control">
+          <h2 className="font-bold text-xl text-center ">
+          Register Your Account !
+        </h2>
             <label className="label">
               <span className="label-text">Name</span>
             </label>
@@ -116,8 +118,9 @@ const Regsiter = () => {
               </a>
             </label>
           </div>
-          <div className="form-control mt-6">
+          <div className="form-control mt-6 gap-4">
             <button className="btn btn-primary">Register</button>
+            <button onClick={handleGoogleRegister} className="btn btn-secondary"><FaGoogle></FaGoogle> Google</button>
           </div>
         </form>
         <p className="font-semibold text-center">
