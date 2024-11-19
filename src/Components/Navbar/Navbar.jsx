@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -35,16 +35,16 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               {/* for responsive */}
-              <Link to={"/"} className="font-bold ">
+              <NavLink to={"/"} className="font-bold ">
                 Home
-              </Link>
-              <Link to={"/service"} className="font-bold ">
+              </NavLink>
+              <NavLink to={"/service"} className="font-bold ">
                 Service
-              </Link>
+              </NavLink>
               {user && (
-                <Link to={"/profile"} className="font-bold ">
+                <NavLink to={"/profile"} className="font-bold ">
                   Profile
-                </Link>
+                </NavLink>
               )}
             </ul>
           </div>
@@ -54,16 +54,16 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-4">
-            <Link to={"/"} className="font-bold mr-3">
+            <NavLink to={"/"} className="font-bold mr-3">
               Home
-            </Link>
-            <Link to={"/service"} className="font-bold mr-3">
+            </NavLink>
+            <NavLink to={"/service"} className="font-bold mr-3">
               Service
-            </Link>
+            </NavLink>
             {user && (
-              <Link to={"/profile"} className="font-bold ">
+              <NavLink to={"/profile"} className="font-bold ">
                 Profile
-              </Link>
+              </NavLink>
             )}
           </ul>
         </div>
@@ -72,12 +72,15 @@ const Navbar = () => {
             <div>
               {user && user.email ? (
                 <>
-                  <div>
+                  <div className="relative group">
                     <img
                       className="w-[60px] rounded-full"
                       src={user.photoURL}
-                      alt=""
+                      alt={user.displayName}
                     />
+                    <div className="absolute w-[100px] text-center bottom-[-40px] left-1/2 transform -translate-x-1/2  bg-gray-800 text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                      <span className="w-[100px]"> {user.displayName} </span>
+                    </div>
                   </div>
                 </>
               ) : (
@@ -93,9 +96,9 @@ const Navbar = () => {
                 Log Out
               </button>
             ) : (
-              <Link to={"/login"} className="btn btn-neutral border-none">
+              <NavLink to={"/login"} className="btn btn-neutral border-none">
                 Login
-              </Link>
+              </NavLink>
             )}
           </div>
         </div>

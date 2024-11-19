@@ -6,6 +6,8 @@
       "image": "https://www.verywellmind.com/thmb/uUYgTWCH5CvEUR8LZUQWMMZ_t5s=/3754x0/filters:no_upscale():max_bytes(150000):strip_icc()/career-counseling-56a0f2ae5f9b58eba4b575ac.jpg",
       "pricing": "$50",
       "counselorName": "John Doe",
+      "dateTime": "2024-12-02 04:00 PM",
+      "description": "Personalized guidance to help you identify and navigate the best career path based on your skills, interests, and goals.",
       "learnMoreUrl": "https://example.com/services/career-path-guidance"
     },
     {
@@ -14,6 +16,8 @@
       "category": "Job Preparation",
       "image": "https://www.kopykitab.com/blog/wp-content/uploads/2022/08/guide-to-becoming-a-career-counselor_169267_large.jpg",
       "pricing": "$40",
+      "description": "Create a professional resume tailored to showcase your skills and experience for potential employers.",
+      "dateTime": "2024-11-29 01:00 PM",
       "counselorName": "Jane Smith"
     },
     {
@@ -21,6 +25,8 @@
       "serviceName": "Interview Preparation",
       "category": "Job Preparation",
       "image": "https://connexioninternational.co.uk/wp-content/uploads/elementor/thumbs/friendly-team-members-chatting-laughing-together-during-office-break-q60i5b8d85yvr6nnv1bc6xzbefcwzewm6pnyhh5ge8.jpg",
+      "dateTime": "2024-11-28 09:30 AM",
+      "description": "Get expert tips and practice sessions to boost your confidence and ace your job interviews.",
       "pricing": "$60",
       "counselorName": "Michael Johnson"
     },
@@ -30,13 +36,18 @@
       "category": "Education Planning",
       "image": "https://careerguidance.vjrc.ac.in/wp-content/uploads/2023/08/10-Top-Highest-Paying-Jobs-in-India.jpg",
       "pricing": "$80",
+      "description": "Receive assistance in preparing compelling college applications, including essay reviews and submission guidance.",
+      "dateTime": "2024-11-27 11:00 AM",
       "counselorName": "Emily Davis"
     },
     {
       "id": 5,
       "serviceName": "Skill Assessment",
       "category": "Personal Development",
+      "description": "Identify your strengths and areas for growth with a comprehensive skills assessment and personalized feedback.",
+
       "image": "https://img.freepik.com/free-photo/team-working-together-project_23-2149325488.jpg",
+      "dateTime": "2024-11-26 02:00 PM",
       "pricing": "$45",
       "counselorName": "Chris Brown"
     },
@@ -44,9 +55,11 @@
       "id": 6,
       "serviceName": "Career Transition Coaching",
       "category": "Career Change",
+        "description": "Expert coaching to help you transition smoothly to a new career path, with actionable steps and support.",
       "image": "https://5.imimg.com/data5/QV/UD/GLADMIN-15615652/career-counseling-500x500.jpg",
       "pricing": "$100",
-      "counselorName": "Patricia Wilson"
+      "counselorName": "Patricia Wilson",
+      "dateTime": "2024-11-25 10:00 AM"
     }
     
   ]

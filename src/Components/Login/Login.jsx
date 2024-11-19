@@ -1,13 +1,13 @@
 import React, { useContext, useRef, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 
 const Login = () => {
-  const emailRef = useRef(null); 
-  const { createLogin, forgetPass,loginGoogle } = useContext(AuthContext);
+  const emailRef = useRef(null);
+  const { createLogin, loginGoogle } = useContext(AuthContext);
   const [showpassword, setshowPassword] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -29,83 +29,84 @@ const Login = () => {
       });
   };
 
-  // Handle Forget Password
-  const handleForgetPass = () => {
-    const email = emailRef.current.value; // Access value correctly
-    if (email) {
-      forgetPass(email);
-    } else {
-      alert("Please enter your email address first.");
-    }
-  };
-
-  const handleGooglelogin =()=>{
-    loginGoogle()
+  const handleGooglelogin = () => {
+    loginGoogle();
     navigate(location?.state || "/");
-  }
+  };
   return (
- <>
- <Navbar></Navbar>
- <div className="flex justify-center items-center min-h-screen">
-      <div className="card bg-base-100 w-full max-w-lg shrink-0 p-4">
-        <h2 className="font-bold text-xl text-center py-2">Login Your Account</h2>
-        <form onSubmit={handleLogin} className="card-body">
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Email</span>
-            </label>
-            <input
-              name="email"
-              ref={emailRef} // Correct usage of ref
-              type="email"
-              placeholder="email"
-              className="input input-bordered"
-              required
-            />
-          </div>
-          <div className="form-control relative">
-            <label className="label">
-              <span className="label-text">Password</span>
-            </label>
-            <input
-              name="password"
-              type={showpassword ? "text" : "password"}
-              placeholder="password"
-              className="input input-bordered"
-              required
-            />
-            <button
-              onClick={() => setshowPassword(!showpassword)}
-              type="button"
-              className="btn btn-xs absolute right-6 top-12"
-            >
-              {showpassword ? <FaEye /> : <FaEyeSlash />}
-            </button>
-            <label className="label">
-              <a
-                onClick={handleForgetPass}
-                className="label-text-alt link link-hover"
-                href="#"
-              >
-                Forgot password?
-              </a>
-            </label>
-          </div>
-          <div className="form-control mt-6 gap-3">
-            <button className="btn btn-primary">Login</button>
-            <button onClick={handleGooglelogin} className="btn btn-secondary"><FaGoogle></FaGoogle> Google</button>
-          </div>
-        </form>
-        <p className="font-semibold text-center">
-          Don't Have an Account?{" "}
-          <Link className="font-semibold underline text-blue-600" to="/register">
-            Register
-          </Link>
-        </p>
+    <>
+      <div className="container mx-auto">
+        <Navbar></Navbar>
       </div>
-    </div>
- <Footer></Footer>
- </>
+      <div className="flex justify-center items-center  min-h-max">
+        <div className="card bg-base-100 w-full max-w-lg shrink-0 p-4">
+          <h2 className="font-bold text-xl text-center py-2">
+            Login Your Account
+          </h2>
+          <form onSubmit={handleLogin} className="card-body">
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Email</span>
+              </label>
+              <input
+                name="email"
+                ref={emailRef} // Correct usage of ref
+                type="email"
+                placeholder="email"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control relative">
+              <label className="label">
+                <span className="label-text">Password</span>
+              </label>
+              <input
+                name="password"
+                type={showpassword ? "text" : "password"}
+                placeholder="password"
+                className="input input-bordered"
+                required
+              />
+              <button
+                onClick={() => setshowPassword(!showpassword)}
+                type="button"
+                className="btn btn-xs absolute right-6 top-12"
+              >
+                {showpassword ? <FaEye /> : <FaEyeSlash />}
+              </button>
+              <button className="font-bold text-start my-2">
+                <NavLink to={"/forget"}>Forgot password?</NavLink>
+              </button>
+            </div>
+            <div className="form-control mt-3 ">
+              <button className="btn btn-primary">Login</button>
+              <div className="mt-3 flex items-center ">
+                <p className="font-bold">Sign in !! </p>
+                <button
+                onClick={handleGooglelogin}
+                className="btn btn-secondary"
+              >
+                <FaGoogle></FaGoogle> Google
+              </button>
+              </div>
+            </div>
+          </form>
+          <p className="font-semibold text-center">
+            Don't Have an Account?{" "}
+            <Link
+              className="font-semibold underline text-blue-600"
+              to="/register"
+            >
+              Register
+            </Link>
+          </p>
+        </div>
+      </div>
+      <div className="container mx-auto">
+        <Footer></Footer>
+      </div>
+    </>
   );
 };
 

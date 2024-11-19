@@ -9,12 +9,17 @@ import Error from "../Error/Error";
 import PrivateRoute from "../ParivateRoute/PrivateRoute";
 import Service from "../Service/Service";
 import Profile from "../Profile/Profile";
+import Forget from "../Forget/Forget";
 
 const Routers = createBrowserRouter([
     { 
         path:'/',
         element: <MainLayout></MainLayout>,
         errorElement:<Error></Error>
+    },
+    {
+        path:'/forget',
+        element:<Forget></Forget>
     },
     {
         path:'/profile',
