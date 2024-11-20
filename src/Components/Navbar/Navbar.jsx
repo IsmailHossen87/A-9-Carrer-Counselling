@@ -1,11 +1,16 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { NavLink, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
   const handlelogOut = () => {
+    toast.success('logout Sucessfully!',{
+      position:'top-center',
+      autoClose:1200
+    })
     logOut();
     navigate("/login");
   };
@@ -41,6 +46,9 @@ const Navbar = () => {
               <NavLink to={"/service"} className="font-bold ">
                 Service
               </NavLink>
+              <NavLink to={"/contract"} className="font-bold ">
+                ContractUs
+              </NavLink>
               {user && (
                 <NavLink to={"/profile"} className="font-bold ">
                   Profile
@@ -60,6 +68,9 @@ const Navbar = () => {
             <NavLink to={"/service"} className="font-bold mr-3">
               Service
             </NavLink>
+            <NavLink to={"/contract"} className="font-bold mr-3">
+                ContractUs
+              </NavLink>
             {user && (
               <NavLink to={"/profile"} className="font-bold ">
                 Profile

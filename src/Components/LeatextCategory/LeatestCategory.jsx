@@ -12,8 +12,10 @@ const LeatestCategory = () => {
   }, []);
 
   return (
-    <div className="bg-base-200 p-2 flex justify-center items-center gap-2">
-      <p className="bg-[#a556f7] font-bold text-center text-white px-3 inline-block mb-2">Latest</p>
+   <>
+      <div ><h3 className="font-bold text-xl text-center my-4">Leatest Details</h3></div>
+      <div className="bg-base-200 p-2 flex justify-center items-center gap-2">
+      <p className="bg-[#a556f7] font-bold text-center text-white px-3 inline-block">Latest</p>
       <Marquee pauseOnHover={true} speed={100} className="space-x-10">
         {details?.map((data, index) => (
           <p
@@ -25,6 +27,7 @@ const LeatestCategory = () => {
         ))}
       </Marquee>
     </div>
+   </>
   );
 };
 

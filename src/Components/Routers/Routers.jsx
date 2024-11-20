@@ -10,6 +10,7 @@ import PrivateRoute from "../ParivateRoute/PrivateRoute";
 import Service from "../Service/Service";
 import Profile from "../Profile/Profile";
 import Forget from "../Forget/Forget";
+import Contract from "../Contracts/Contract";
 
 const Routers = createBrowserRouter([
     { 
@@ -31,11 +32,16 @@ const Routers = createBrowserRouter([
     },
     {
         path:'/login',
+        
         element:<Login></Login>
     },
     {
         path:'/register',
         element:<Register></Register>
+    },
+    {
+        path:'/contract',
+        element:<Contract></Contract>
     },
     {
         path: '/details/:id',

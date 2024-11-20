@@ -7,6 +7,7 @@ import Inspirational from '../Inspiarational/Inspoarational';
 import { Helmet } from 'react-helmet';
 import LeatestCategory from '../LeatextCategory/LeatestCategory';
 
+
 const MainLayout = () => {
     return (
        <>
@@ -15,6 +16,7 @@ const MainLayout = () => {
           <title> Career Counseling || Home</title>
           <meta name="description" content="Helmet application" />
         </Helmet>
+           
             <Navbar></Navbar>
             <Slider></Slider>
             <Card></Card>

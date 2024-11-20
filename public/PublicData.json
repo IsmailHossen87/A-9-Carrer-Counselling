@@ -8,7 +8,8 @@
       "counselorName": "John Doe",
       "dateTime": "2024-12-02 04:00 PM",
       "description": "Personalized guidance to help you identify and navigate the best career path based on your skills, interests, and goals.",
-      "learnMoreUrl": "https://example.com/services/career-path-guidance"
+      "learnMoreUrl": "https://example.com/services/career-path-guidance",
+      "rating":4.6
     },
     {
       "id": 2,
@@ -18,7 +19,8 @@
       "pricing": "$40",
       "description": "Create a professional resume tailored to showcase your skills and experience for potential employers.",
       "dateTime": "2024-11-29 01:00 PM",
-      "counselorName": "Jane Smith"
+      "counselorName": "Jane Smith",
+      "rating":3.9
     },
     {
       "id": 3,
@@ -28,7 +30,8 @@
       "dateTime": "2024-11-28 09:30 AM",
       "description": "Get expert tips and practice sessions to boost your confidence and ace your job interviews.",
       "pricing": "$60",
-      "counselorName": "Michael Johnson"
+      "counselorName": "Michael Johnson",
+      "rating":4.9
     },
     {
       "id": 4,
@@ -38,7 +41,8 @@
       "pricing": "$80",
       "description": "Receive assistance in preparing compelling college applications, including essay reviews and submission guidance.",
       "dateTime": "2024-11-27 11:00 AM",
-      "counselorName": "Emily Davis"
+      "counselorName": "Emily Davis",
+      "rating":5
     },
     {
       "id": 5,
@@ -49,7 +53,8 @@
       "image": "https://img.freepik.com/free-photo/team-working-together-project_23-2149325488.jpg",
       "dateTime": "2024-11-26 02:00 PM",
       "pricing": "$45",
-      "counselorName": "Chris Brown"
+      "counselorName": "Chris Brown",
+      "rating":3.8
     },
     {
       "id": 6,
@@ -59,7 +64,8 @@
       "image": "https://5.imimg.com/data5/QV/UD/GLADMIN-15615652/career-counseling-500x500.jpg",
       "pricing": "$100",
       "counselorName": "Patricia Wilson",
-      "dateTime": "2024-11-25 10:00 AM"
+      "dateTime": "2024-11-25 10:00 AM",
+      "rating":4.3
     }
     
   ]

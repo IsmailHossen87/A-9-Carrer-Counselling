@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Footer from "../../Footer/Footer";
 import Navbar from "../../Navbar/Navbar";
+import { toast } from "react-toastify";
 
 const Regsiter = () => {
   const { loginGoogle, createUser, setUser, updateprofile, logOut } =
@@ -45,15 +46,28 @@ const Regsiter = () => {
     }
     createUser(email, password)
       .then((res) => {
+        toast.success('Registetion Sucessfully!',{
+          position:'top-center',
+          autoClose:1200
+        })
         const user = res.user;
         updateprofile({ displayName: name, photoURL: photo });
         setUser({ ...user, displayName: name, photoURL: photo });
         navigate(location?.state || "/");
       })
-      .catch((error) => {});
+      .catch((error) => {
+        toast.warning('some thing rong!',{
+          position:'top-center',
+          autoClose:1200
+        })
+      });
   };
   const handleGoogleRegister = () => {
     loginGoogle();
+    // toast.sucess('Registetion Sucessfully!',{
+    //   position:'top-center',
+    //   autoClose:1200
+    // })
     navigate("/");
   };
 

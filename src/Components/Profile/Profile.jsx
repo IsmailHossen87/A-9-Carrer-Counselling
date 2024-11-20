@@ -4,6 +4,7 @@ import { FaCamera } from "react-icons/fa";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import { Helmet } from "react-helmet";
+import { toast } from "react-toastify";
 
 const Profile = () => {
   const { user, updateprofile, loader } = useContext(AuthContext);
@@ -36,10 +37,16 @@ const Profile = () => {
         photoURL: photoURL,
       });
 
-      alert("Profile updated successfully!");
+      toast.sucess("Your Profile Updated!",{
+        position:'top-center',
+        autoClose:1200
+      })
     } catch (error) {
       console.error("Error updating profile:", error.message);
-      alert("Failed to update profile.");
+      toast.warning("Failed to update profile.",{
+        position:'top-center',
+        autoClose:1200
+      })
     } finally {
       setIsLoading(false); // Hide loading indicator
     }

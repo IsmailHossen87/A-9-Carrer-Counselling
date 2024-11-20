@@ -16,7 +16,7 @@ const Service = () => {
           <title> Career Counseling || Service</title>
           <meta name="description" content="Helmet application" />
         </Helmet>
-        <div className="flex justify-center items-center my-5 min-h-screen bg-gray-100">
+        <div className="flex justify-center items-center my-5  ">
           <div className="card bg-white shadow-lg p-8 w-full max-w-4xl">
             <h2 className="font-bold text-3xl text-center text-blue-600 mb-4">
               Career Counseling Services

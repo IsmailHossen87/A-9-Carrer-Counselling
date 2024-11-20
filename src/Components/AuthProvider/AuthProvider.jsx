@@ -19,6 +19,7 @@ const provider = new GoogleAuthProvider()
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loader,setloader] = useState(true)
+    const [forgetemail,setforgetemail]= useState('')
     //  create a user
     const createUser = (email, Password) => {
       setloader(true)
@@ -91,7 +92,9 @@ const forgetPass = (email) => {
       loader,
       updateprofile,
       forgetPass,
-      uploadImage
+      uploadImage,
+      forgetemail,
+      setforgetemail
     };
     return (
         <AuthContext.Provider value={authInfo}>

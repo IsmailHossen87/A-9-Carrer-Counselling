@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 
 const Contract = () => {
   const [name, setName] = useState("");
@@ -21,7 +23,11 @@ const Contract = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+   <>
+   <div className="container mx-auto">
+    <Navbar></Navbar>
+   </div>
+     <div className="flex justify-center items-center my-7 min-h-max ">
       <div className="card bg-white shadow-lg p-8 w-full max-w-4xl">
         <h2 className="font-bold text-3xl text-center text-blue-600 mb-6">Contact Us</h2>
 
@@ -97,6 +103,10 @@ const Contract = () => {
         </div>
       </div>
     </div>
+    <div className="container mx-auto">
+    <Footer></Footer>
+   </div>
+   </>
   );
 };
 
