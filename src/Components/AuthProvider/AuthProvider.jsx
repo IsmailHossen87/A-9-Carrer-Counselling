@@ -26,8 +26,6 @@ const AuthProvider = ({children}) => {
       return createUserWithEmailAndPassword(auth, email, Password);
     };
     // login create
-    console.log(auth)
-    console.log(user)
     const createLogin = (email,password)=>{
       setloader(true)
       return signInWithEmailAndPassword(auth,email,password)
@@ -41,6 +39,17 @@ const AuthProvider = ({children}) => {
           setUser(result.user); 
         })
     };
+    // update data cpy
+    const updateNewProfile = (updated) => {
+      return updateProfile(auth.currentUser, updated)
+        .then(() => {
+          setUser({ ...auth.currentUser, ...updated });
+          toast.success("Profile updated successfully!");
+        })
+        .catch((error) => {
+          toast.error("Error updating profile:", error);
+        });
+    };
     // sing Out
     const logOut = () => {
        signOut(auth);
@@ -94,7 +103,8 @@ const forgetPass = (email) => {
       forgetPass,
       uploadImage,
       forgetemail,
-      setforgetemail
+      setforgetemail,
+      updateNewProfile
     };
     return (
         <AuthContext.Provider value={authInfo}>
