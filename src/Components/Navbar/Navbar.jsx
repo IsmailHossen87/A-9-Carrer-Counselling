@@ -37,7 +37,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-35 p-2 shadow"
             >
               {/* for responsive */}
               <NavLink to={"/"} className="font-bold ">
@@ -56,7 +56,7 @@ const Navbar = () => {
               )}
             </ul>
           </div>
-          <a className="btn btn-ghost font-bold text-xl hidden md:block">
+          <a className="btn font-serif btn-ghost font-bold text-xl hidden md:block">
             Career Counseling
           </a>
         </div>
@@ -101,13 +101,13 @@ const Navbar = () => {
             {user && user.email ? (
               <button
                 onClick={handlelogOut}
-                className="btn btn-neutral border-none"
+                className="btn border-none"
               >
                 {" "}
                 Log Out
               </button>
             ) : (
-              <NavLink to={"/login"} className="btn btn-neutral border-none">
+              <NavLink to={"/login"} className="btn border-none">
                 Login
               </NavLink>
             )}

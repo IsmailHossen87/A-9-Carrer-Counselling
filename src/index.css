@@ -4,5 +4,8 @@
 @import "aos/dist/aos.css"; 
 
 a.active {
-    color: #726cf7;
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
 }
